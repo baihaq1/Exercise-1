@@ -1,25 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="assets/style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <title>My Profile</title>
 </head>
-<body>
+<body class="body">
   <div class="container">
-    <form action="">
-      <div class="col-sm">
-        Name : <input type="text" name="name" id="name">
+    <div class="row justify-content-md-center">
+      <div class="col-md-3 side">
+        <div class="row">
+          <div class="text-center">
+            <img src="assets/img/foto.jpg" class="rounded-circle foto" alt="pic">
+          </div>
+        </div>
+        <div class="row">
+          <div class="sidenav">
+            <a href="#" id="btn-profile" class="list" onclick="buka(this)">Profile</a>
+            <a href="#" id="btn-contact" class="list" onclick="buka(this)">Contact</a>
+          </div>
+        </div>
       </div>
-      <div class="col-sm">
-        Name : <input type="text" name="name" id="name" readonly>
+      <div class="col-md-6 right">
+        <h1>Baihaqi</h1>
+        <p>Someone who wants to be a web dev.</p>
+        <hr>
+          <div id="profile" style="display:none;">
+            <p>
+              Nama : <b>Baihaqi</b>
+            </p>
+            <p>
+              Alamat : <b>Cempaka Putih Barat, Jakarta Pusat</b>
+            </p>
+          </div>
+          <div id="contact" style="display:none;">
+            <p>
+              Email : <b>baihaqi.tar.gz@gmail.com</b>
+            </p>
+            <p>
+              No. Hp : <b>089671555057</b>
+            </p>
+          </div>
       </div>
-      <div class="col-sm">
-        Name 2 : <input type="text" name="name" id="name" disabled>
-      </div>
-    </form>
+    </div>
   </div>
+  <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js">
+  </script>
+  <script type="text/javascript">
+    function buka(obj) {
+      if (obj.id == "btn-contact") {
+        document.getElementById("profile").style.display = "none";
+        document.getElementById("contact").style.display = "block";
+      }
+      else if (obj.id == "btn-profile") {
+        document.getElementById("profile").style.display = "block";
+        document.getElementById("contact").style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
